@@ -1,5 +1,6 @@
 # linux-server-setup
-Simple linux server setup created for a school project. 
+Simple linux server setup created for a school project. All of this is made for AWS since that's what we used for the project. 
+You shouldn't have too many problems if you use another Redhat distro but I can't guarantee it. Have fun !
 
 WARNING: This repo assumes that you have at least 2 servers (main and backup servers), 
 take this into consideration before using.
