@@ -6,6 +6,11 @@ WARNING: This repo assumes that you have at least 2 servers (main and backup ser
 take this into consideration before using.
 
 # USAGE
+Write the ip address of your main server in main-server-ip.txt
+Write the ip address of your backup server in backup-server-ip.txt
+
+Warning ! If your network address isn't 10.42.0.0/24, edit the /NFS/nfs-main-server.sh AND /NTP/ntm-main-server.sh and replace '10.42.0.0/24' with your network address.
+
 Usage of the setup.sh script:
 On main server:
   sudo ./setup.sh -m 
