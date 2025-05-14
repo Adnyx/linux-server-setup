@@ -10,10 +10,12 @@ First of all, configure gpg if not done yet: (if it isn't installed, run the req
 
 `gpg --full-generate-key`
 
-select 1
-then 4096
-then select the rest for you.
-Finally edit the Backups/backup-script.sh and change the email variable with the email you put in the gpg configuration
+Select 1
+Then 4096
+Then select the rest for you.
+Edit the Backups/backup-script.sh and change the email variable with the email you put in the gpg configuration
+Finally, edit your key with this command `gpg --edit-key {YOUR EMAIL}` and add `trust` in the file.
+
 
 Write the ip address of your main server in main-server-ip.txt
 Write the ip address of your backup server in backup-server-ip.txt
