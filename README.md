@@ -7,11 +7,13 @@ take this into consideration before using.
 
 # USAGE
 First of all, configure gpg if not done yet: (if it isn't installed, run the requirements.sh script)
-`gpg --full-generate-key`
-Then copy your key ID:
-`gpg --list-keys`
-And finally export your key
 
+`gpg --full-generate-key`
+
+select 1
+then 4096
+then select the rest for you.
+Finally edit the Backups/backup-script.sh and change the email variable with the email you put in the gpg configuration
 
 Write the ip address of your main server in main-server-ip.txt
 Write the ip address of your backup server in backup-server-ip.txt
