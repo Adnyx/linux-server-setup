@@ -4,26 +4,6 @@
 # Make sure to read the README file before executing
 # ==========================================
 
-# TODO:
-# - [X] Run requirements script
-# - [X] Ask what server user is on (main or backup)
-#
-# - [X] Run raid1 setup
-# - [X] (optionnal) run raid1 status check
-# - [X] Run monitoring script
-#
-# If user is on main server:
-#	- [X] Run backup script
-#	- [X] Add crontab line to crontab for backups
-#	- [X] Run ftp main server script
-#	- [X] Run nfs main server script
-#	- [X] Run ntp main server script
-#
-# If user is on backup server:
-#	- [X] Run ftp backup server script
-#	- [X] Run nfs client server script
-#	- [X] Run ntp client server script
-
 set -euo pipefail
 
 $CRON_FILE="Backups/cron-config.txt"

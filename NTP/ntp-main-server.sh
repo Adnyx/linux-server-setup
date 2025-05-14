@@ -1,3 +1,7 @@
+#!usr/bin/bash
+
+# MAKE SURE TO CHANGE THE NETWORK ADDRESS IN THE ECHO ALLOW LINE !!!!!!!
+
 echo "pool 2.centos.pool.ntp.org iburst" >> /etc/chrony.conf
 echo "allow 10.42.0.0/24" >> /etc/chrony.conf
 sudo firewall-cmd --permanent --add-service=ntp

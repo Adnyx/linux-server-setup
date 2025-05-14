@@ -8,7 +8,13 @@
 set -euo pipefail
 
 # CONFIG
-BACKUP_SERVER="backups@10.42.0.49"
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+BACKUP_IP=$(cat "$SCRIPT_DIR/backup-server-ip.txt")
+MAIN_IP=$(cat "$SCRIPT_DIR/main-server-ip.txt")
+
+BACKUP_SERVER="backups@$BACKUP_IP"
 KEY_PATH="/home/ec2-user/.ssh/backup_key"
 REMOTE_PATH="/mnt/raid/backups-from-main"
 LOCAL_TMP="/tmp/restore"
@@ -22,7 +28,7 @@ if [[ $# -ne 1 ]]; then
 fi
 
 TAG="$1"
-FILENAME="ip-10-42-0-102_${TAG}.tar.gz.gpg"
+FILENAME="main_server${TAG}.tar.gz.gpg"
 LOCAL_ARCHIVE="$LOCAL_TMP/$FILENAME"
 
 # Ensure local temp directories exist and are writable

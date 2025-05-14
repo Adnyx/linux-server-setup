@@ -13,10 +13,15 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # ---------- CONFIGURATION ---------------------------------
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+BACKUP_IP=$(cat "$SCRIPT_DIR/backup-server-ip.txt")
+MAIN_IP=$(cat "$SCRIPT_DIR/main-server-ip.txt")
+
 BACKUP_ROOT="/tmp/backup"
 SRC_DIRS=("/srv" "/var" "/home" "/users")
 SNAPSHOT_FILE="$BACKUP_ROOT/snapshot.snar"
-GPG_RECIPIENT="theo.dubois@std.heh.be"
+GPG_RECIPIENT="YOUR_EMAIL"
 FULL_DAY="Sunday"
 RETENTION_DAYS=7
 DATE=$(date +%F)
@@ -25,7 +30,7 @@ ARCHIVE_NAME="${HOST}_${DATE}"
 LOG_FILE="/var/log/backup.log"
 
 REMOTE_USER="backups"
-REMOTE_HOST="10.42.0.49"
+REMOTE_HOST=$BACKUP_IP
 REMOTE_DIR="/mnt/raid/backups-from-main"
 SSH_KEY="/home/ec2-user/.ssh/backup_key"
 
