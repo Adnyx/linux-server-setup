@@ -6,6 +6,13 @@ WARNING: This repo assumes that you have at least 2 servers (main and backup ser
 take this into consideration before using.
 
 # USAGE
+First of all, configure gpg if not done yet: (if it isn't installed, run the requirements.sh script)
+`gpg --full-generate-key`
+Then copy your key ID:
+`gpg --list-keys`
+And finally export your key
+
+
 Write the ip address of your main server in main-server-ip.txt
 Write the ip address of your backup server in backup-server-ip.txt
 
