@@ -38,7 +38,7 @@ SSH_KEY="/home/ec2-user/.ssh/backup_key"
 mkdir -p /users
 
 echo "making backup directory"
-export GPG_TTY=$(tty 2>/dev/null || echo not-a-tty)
+export GPG_TTY=$(tty 2>/dev/null || echo "not-a-tty")
 mkdir -p "$BACKUP_ROOT"
 
 sudo mkdir -p /var/log/
@@ -63,7 +63,7 @@ echo "Creating $TYPE backup → $ARCHIVE_NAME"
 
 # ---------- BACKUP CREATION -------------------------------
 tar -czf - --listed-incremental="$SNAPSHOT_FILE" "${SRC_DIRS[@]}" \
-  | gpg --batch --yes --trust-model always --encrypt --recipient "$GPG_RECIPIENT" \
+  | gpg --batch --yes --encrypt --recipient "$GPG_RECIPIENT" \
   --output "$BACKUP_ROOT/$ARCHIVE_NAME"
 
 echo "Backup created: $BACKUP_ROOT/$ARCHIVE_NAME"
