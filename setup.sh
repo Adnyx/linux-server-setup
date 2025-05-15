@@ -6,7 +6,9 @@
 
 set -euo pipefail
 
-$CRON_FILE="Backups/cron-config.txt"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CRON_FILE="$SCRIPT_DIR/Backups/cron-config.txt"
+ls -l "$CRON_FILE"
 
 # Check for root privileges
 if [[ $EUID -ne 0 ]]; then
@@ -72,14 +74,19 @@ case "$1" in
         echo "Setting up MAIN server..."
        	echo "Creating safe project folder for backups"
         mkdir -p /opt/backup
-	cp backup-script.sh /opt/backup/
+	cp Backups/backup-script.sh /opt/backup/
 	chmod +x /opt/backup/backup-script.sh
 	
+	echo "running backup script"	
         ./Backups/backup-script.sh
+	echo "running ftp config"
         ./Backups/FTP/ftp-main-server.sh
+	echo "running nfs config"
         ./NFS/nfs-main-server.sh
+	echo "running ntp config"
         ./NTP/ntp-main-server.sh
-        ( crontab -l 2>/dev/null; cat "$CRON_FILE" ) | crontab -
+	echo "updating crontab"
+        crontab "$CRON_FILE"
     	echo "Crontab updated."
         ;;
     -b)
