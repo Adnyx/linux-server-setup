@@ -10,17 +10,16 @@ First of all, configure gpg if not done yet: (if it isn't installed, run the req
 
 `gpg --full-generate-key`
 
-Select 1
-Then 4096
-Then select the rest for you.
-Edit the Backups/backup-script.sh and change the email variable with the email you put in the gpg configuration
-Finally, edit your key with this command `gpg --edit-key {YOUR EMAIL}` and add `trust` in the file.
+Select 1 \
+Then 4096 \
+Then enter your informations as prompted. \
+Edit the Backups/backup-script.sh and change the email variable with the email you put in the gpg configuration. \
+Finally, edit your key with this command `gpg --edit-key {YOUR EMAIL}` and type `trust` in the terminal, then `quit`. \
 
+Write the ip address of your main server in main-server-ip.txt \
+Write the ip address of your backup server in backup-server-ip.txt \
 
-Write the ip address of your main server in main-server-ip.txt
-Write the ip address of your backup server in backup-server-ip.txt
-
-Warning ! If your network address isn't 10.42.0.0/24, edit the /NFS/nfs-main-server.sh AND /NTP/ntm-main-server.sh and replace '10.42.0.0/24' with your network address.
+Warning ! If your network address isn't 10.42.0.0/24, edit the /NFS/nfs-main-server.sh AND /NTP/ntm-main-server.sh and replace '10.42.0.0/24' with your network address. \
 
 Usage of the setup.sh script:
 On main server:
