@@ -2,6 +2,13 @@
 # NFS Server Setup Script
 # Sets up /srv/nfs/public shared with 10.42.0.0/24
 
+
+# /!\\
+# MAKE SURE TO CHANGE THE NETWORK ADDRESS IN THE 'EXPORT_LINE' LINE !!!!!
+
+
+
+
 set -euo pipefail
 
 # Install and start NFS server

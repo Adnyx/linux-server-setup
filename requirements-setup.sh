@@ -16,8 +16,8 @@ fi
 # ----------------------
 # Base packages
 # ----------------------
-dnf install -y bind bind-utils firewalld wget curl vim net-tools unzip \
-               chrony nfs-utils httpd grafana
+dnf install -y --allowerasing bind bind-utils firewalld wget curl vim net-tools unzip \
+               chrony nfs-utils httpd pinentry gnupg2
 
 # Enable services
 systemctl enable --now firewalld
