@@ -62,7 +62,7 @@ fi
 echo "Creating $TYPE backup → $ARCHIVE_NAME"
 
 # ---------- BACKUP CREATION -------------------------------
-tar cz "${SRC_DIRS[@]}" | gpg --yes --batch --auto-key-locate=local --encrypt --recipient "$GPG_RECIPIENT" -o "$ARCHIVE"
+tar cz "${SRC_DIRS[@]}" | gpg --yes --batch --auto-key-locate=local --encrypt --recipient "$GPG_RECIPIENT" -o "$ARCHIVE_NAME"
 
 
 echo "Backup created: $BACKUP_ROOT/$ARCHIVE_NAME"
