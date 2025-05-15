@@ -38,7 +38,7 @@ SSH_KEY="/home/ec2-user/.ssh/backup_key"
 mkdir -p /users
 
 echo "making backup directory"
-export GPG_TTY=$(tty)
+export GPG_TTY=$(tty 2>/dev/null || echo not-a-tty)
 mkdir -p "$BACKUP_ROOT"
 
 sudo mkdir -p /var/log/
