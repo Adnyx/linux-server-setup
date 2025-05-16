@@ -18,7 +18,7 @@ SRC_DIRS=("/srv" "/var" "/home" "/users")
 SNAPSHOT_FILE="$BACKUP_ROOT/snapshot.snar"
 
 # MAKE SURE TO PUT THE EMAIL YOU'LL USE FOR GPG BELOW
-GPG_RECIPIENT="theo.dubois@std.heh.be"
+GPG_RECIPIENT="YOUR EMAIL"
 FULL_DAY="Sunday"
 RETENTION_DAYS=7
 DATE=$(date +%F)
