@@ -6,16 +6,6 @@ WARNING: This repo assumes that you have at least 2 servers (main and backup ser
 take this into consideration before using.
 
 # USAGE
-First of all, configure gpg if not done yet: (if it isn't installed, run the requirements.sh script)
-
-`gpg --full-generate-key`
-
-Select 1 \
-Then 4096 \
-Then enter your informations as prompted. \
-Edit the Backups/backup-script.sh and change the email variable with the email you put in the gpg configuration. \
-Finally, edit your key with this command `gpg --edit-key {YOUR EMAIL}` and type `trust` in the terminal, then `quit`. \
-
 Write the ip address of your main server in main-server-ip.txt \
 Write the ip address of your backup server in backup-server-ip.txt \
 
