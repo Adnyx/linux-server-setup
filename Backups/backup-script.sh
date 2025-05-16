@@ -18,7 +18,7 @@ SRC_DIRS=("/srv" "/var" "/home" "/users")
 SNAPSHOT_FILE="$BACKUP_ROOT/snapshot.snar"
 
 # MAKE SURE TO PUT THE EMAIL YOU'LL USE FOR GPG BELOW
-GPG_RECIPIENT="YOUR EMAIL"
+GPG_RECIPIENT="theo.dubois@std.heh.be"
 FULL_DAY="Sunday"
 RETENTION_DAYS=7
 DATE=$(date +%F)
@@ -27,7 +27,7 @@ ARCHIVE_NAME="${HOST}_${DATE}"
 LOG_FILE="/var/log/backup.log"
 
 REMOTE_USER="backups"
-REMOTE_HOST="10.42.0.49"
+REMOTE_HOST="10.42.0.234"
 REMOTE_DIR="/mnt/raid/backups-from-main"
 SSH_KEY="/home/ec2-user/.ssh/backup_key"
 
