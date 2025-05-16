@@ -8,7 +8,9 @@ cd prometheus-2.46.0.linux-amd64
 
 mv prometheus /usr/local/bin/
 mv promtool /usr/local/bin/
+rm -rf /etc/prometheus/consoles
 mv consoles /etc/prometheus
+rm -rf /etc/prometheus/console_libraries
 mv console_libraries /etc/prometheus
 cd ..
 
