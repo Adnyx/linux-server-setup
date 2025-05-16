@@ -6,6 +6,7 @@ WARNING: This repo assumes that you have at least 2 servers (main and backup ser
 take this into consideration before using.
 
 # USAGE
+Inside of Backups/backup-script.sh, make sure to add the email you're going to use for the GPG encryption (if you're unsure, just make sure to put the same email every time you're prompted)
 Write the ip address of your main server in main-server-ip.txt \
 Write the ip address of your backup server in backup-server-ip.txt \
 
