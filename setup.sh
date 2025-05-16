@@ -45,6 +45,26 @@ fi
 # Run for both MAIN and BACKUP server
 ./requirements-setup.sh
 
+# ASKING for GPG setup
+while true; do
+    read -rp "Do you want to setup GPG encryption ? (required at least once) (y/n): " answer
+    case "$answer" in
+        [Yy]*)
+            echo "Running setup for GPG..."
+            ./Backups/gpg-setup.sh
+            break
+            ;;
+        [Nn]*)
+            echo "Aight bet, skipping this."
+            break
+            ;;
+        *)
+            echo "Please answer y or n."
+            ;;
+    esac
+done
+
+
 # ASKING for RAID1 setup
 while true; do
     read -rp "Do you want to set up RAID1 ? (y/n): " answer
