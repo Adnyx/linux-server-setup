@@ -26,7 +26,7 @@
 
 set -euo pipefail
 
-$CRON_FILE="Backups/cron-config.txt"
+CRON_FILE="Backups/cron-config.txt"
 
 # Check for root privileges
 if [[ $EUID -ne 0 ]]; then
@@ -112,7 +112,7 @@ case "$1" in
         echo "Setting up MAIN server..."
        	echo "Creating safe project folder for backups"
         mkdir -p /opt/backup
-	cp backup-script.sh /opt/backup/
+	cp Backups/backup-script.sh /opt/backup/
 	chmod +x /opt/backup/backup-script.sh
 	
         ./Backups/backup-script.sh

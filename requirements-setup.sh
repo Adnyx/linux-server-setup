@@ -16,7 +16,7 @@ fi
 # ----------------------
 # Base packages
 # ----------------------
-dnf install -y bind bind-utils firewalld wget curl vim net-tools unzip \
+dnf install --allowerasing -y bind bind-utils firewalld wget curl vim net-tools unzip \
                chrony nfs-utils httpd pinentry gnupg2
 
 # Enable services
@@ -26,6 +26,7 @@ systemctl enable --now chronyd
 # ----------------------
 # Create base directories
 # ----------------------
+mkdir -p /users
 mkdir -p /etc/prometheus
 mkdir -p /var/lib/prometheus
 mkdir -p /srv/nfs/public

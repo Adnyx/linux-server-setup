@@ -7,6 +7,26 @@ take this into consideration before using.
 
 # USAGE
 Inside of Backups/backup-script.sh, make sure to add the email you're going to use for the GPG encryption (if you're unsure, just make sure to put the same email every time you're prompted)
+
+Also configure SSH on both the main server and the backup server:
+
+On the main server:
+```
+ssh-keygen -t ed25519 -f ~/.ssh/backup_key -N ""
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
+On the backup server:
+```
+cat ~/.ssh/backup_key.pub # COPY THE OUTPUT
+
+```
+
+
+You can test the connection with `ssh -i ~/.ssh/backup_key backups@10.42.0.234`
+
+
 Write the ip address of your main server in main-server-ip.txt \
 Write the ip address of your backup server in backup-server-ip.txt \
 
